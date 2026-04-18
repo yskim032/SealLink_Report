@@ -805,8 +805,35 @@
             letter-spacing: .5px
         }
 
-        @media(max-width:768px) {
+        /* 모바일 반응형 최적화 */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 15px;
+        }
 
+        /* 테이블 내부 요소 줄바꿈 방지(모바일에서 스크롤 유도) */
+        .table-wrapper table {
+            min-width: 500px;
+            /* 테이블이 너무 찌그러지지 않도록 최소 너비 지정 */
+        }
+
+        @media(max-width:768px) {
+            body {
+                padding: 10px;
+                font-size: 13px;
+            }
+
+            .hmeta {
+                grid-template-columns: 1fr;
+            }
+
+            .kgrid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            /* LG 핵심수익 지표 2열 배치 */
             .cgrid,
             .two,
             .three,
@@ -819,7 +846,17 @@
             }
 
             .hlogo {
-                font-size: 36px
+                font-size: 32px
+            }
+
+            th,
+            td {
+                padding: 12px;
+                font-size: 12px;
+            }
+
+            .card {
+                padding: 20px;
             }
         }
     </style>
@@ -877,7 +914,8 @@
                                 제3조 — 대리 법인 지정권</div>
                             <p style="font-size:12px;color:#7090a8;line-height:1.75">기획자는 본 사업의 협상, 계약 체결 및 이행 과정에서
                                 <strong style="color:#bdd4e8">기획자를 대리하는 법인(이하 "대리 법인")을 지정할 수 있으며</strong>, 해당 대리 법인은
-                                기획자와 동일한 권리 및 의무를 행사합니다.</p>
+                                기획자와 동일한 권리 및 의무를 행사합니다.
+                            </p>
                         </div>
                     </div>
                     <div
@@ -941,48 +979,50 @@
             <div class="sn">2</div>시장 규모 분석 (Market Sizing)<div class="sl"></div>
         </div>
         <div class="card">
-            <table>
-                <thead>
-                    <tr>
-                        <th>구분</th>
-                        <th>수량</th>
-                        <th>산출 근거</th>
-                        <th class="r">비고</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="tr-hi">
-                        <td>① 국내 연간 컨테이너 총 물동량</td>
-                        <td>33,000,000 개</td>
-                        <td>Full + 공컨테이너 합산</td>
-                        <td class="r">한국 전체 기준</td>
-                    </tr>
-                    <tr class="tr-sub">
-                        <td style="padding-left:30px">└ 공컨테이너 (20%)</td>
-                        <td>6,600,000 개</td>
-                        <td>SEALINK 미적용</td>
-                        <td class="r" style="color:var(--red)">제외</td>
-                    </tr>
-                    <tr class="tr-total">
-                        <td>② SEALINK 적용 대상 (Full Container, 80%)</td>
-                        <td>26,400,000 개</td>
-                        <td>33,000,000 × 80%</td>
-                        <td class="r">핵심 과금 기준</td>
-                    </tr>
-                    <tr>
-                        <td>③ 건당 검수료</td>
-                        <td>8,000 원</td>
-                        <td>현행 검수 단가 기준</td>
-                        <td class="r">선사 부담</td>
-                    </tr>
-                    <tr class="tr-hi">
-                        <td>④ 연간 총 검수료 시장</td>
-                        <td>—</td>
-                        <td>26,400,000 × 8,000원</td>
-                        <td class="r" style="color:var(--a1)">2,112억원</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>수량</th>
+                            <th>산출 근거</th>
+                            <th class="r">비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tr-hi">
+                            <td>① 국내 연간 컨테이너 총 물동량</td>
+                            <td>33,000,000 개</td>
+                            <td>Full + 공컨테이너 합산</td>
+                            <td class="r">한국 전체 기준</td>
+                        </tr>
+                        <tr class="tr-sub">
+                            <td style="padding-left:30px">└ 공컨테이너 (20%)</td>
+                            <td>6,600,000 개</td>
+                            <td>SEALINK 미적용</td>
+                            <td class="r" style="color:var(--red)">제외</td>
+                        </tr>
+                        <tr class="tr-total">
+                            <td>② SEALINK 적용 대상 (Full Container, 80%)</td>
+                            <td>26,400,000 개</td>
+                            <td>33,000,000 × 80%</td>
+                            <td class="r">핵심 과금 기준</td>
+                        </tr>
+                        <tr>
+                            <td>③ 건당 검수료</td>
+                            <td>8,000 원</td>
+                            <td>현행 검수 단가 기준</td>
+                            <td class="r">선사 부담</td>
+                        </tr>
+                        <tr class="tr-hi">
+                            <td>④ 연간 총 검수료 시장</td>
+                            <td>—</td>
+                            <td>26,400,000 × 8,000원</td>
+                            <td class="r" style="color:var(--a1)">2,112억원</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <div class="co warn">
                 <div class="cicon">📌</div>
                 <div class="ctxt">
@@ -1075,13 +1115,13 @@
                 <div class="kicon">🏗️</div>
             </div>
             <div class="kcard green">
-                <div class="klabel">LG 연간 수취액 (95%)</div>
+                <div class="klabel">기획자·LG 연간 수취액 (95%)</div>
                 <div class="kval">2,006억</div>
                 <div class="kunit">원 / 년</div>
                 <div class="kicon">📈</div>
             </div>
             <div class="kcard green">
-                <div class="klabel">LG 월 평균 수취액</div>
+                <div class="klabel">기획자·LG 월 평균 수취액</div>
                 <div class="kval">167.2억</div>
                 <div class="kunit">원 / 월</div>
                 <div class="kicon">📅</div>
@@ -1093,48 +1133,50 @@
             <div class="sn">5</div>수익 배분 상세 산출<div class="sl"></div>
         </div>
         <div class="card">
-            <table>
-                <thead>
-                    <tr>
-                        <th>항목</th>
-                        <th>비율</th>
-                        <th>산출 기준</th>
-                        <th class="r">연간 금액</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="tr-hi">
-                        <td>① 연간 총 검수료</td>
-                        <td>100%</td>
-                        <td>26,400,000개 × 8,000원</td>
-                        <td class="r">211,200,000,000원</td>
-                    </tr>
-                    <tr class="tr-sub">
-                        <td style="padding-left:28px">└ 터미널 수수료 차감</td>
-                        <td style="color:var(--red)">−5%</td>
-                        <td>211,200,000,000 × 5%</td>
-                        <td class="r" style="color:var(--red)">−10,560,000,000원</td>
-                    </tr>
-                    <tr class="tr-total">
-                        <td>② LG 연간 순수취액</td>
-                        <td>95%</td>
-                        <td>211,200,000,000 × 95%</td>
-                        <td class="r">200,640,000,000원</td>
-                    </tr>
-                    <tr class="tr-sub">
-                        <td style="padding-left:28px">└ 월 평균</td>
-                        <td></td>
-                        <td>연간 ÷ 12개월</td>
-                        <td class="r" style="color:var(--a1)">16,720,000,000원</td>
-                    </tr>
-                    <tr class="tr-sub">
-                        <td style="padding-left:28px">└ 일 평균</td>
-                        <td></td>
-                        <td>연간 ÷ 365일</td>
-                        <td class="r" style="color:var(--a1)">549,700,000원</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>항목</th>
+                            <th>비율</th>
+                            <th>산출 기준</th>
+                            <th class="r">연간 금액</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tr-hi">
+                            <td>① 연간 총 검수료</td>
+                            <td>100%</td>
+                            <td>26,400,000개 × 8,000원</td>
+                            <td class="r">211,200,000,000원</td>
+                        </tr>
+                        <tr class="tr-sub">
+                            <td style="padding-left:28px">└ 터미널 수수료 차감</td>
+                            <td style="color:var(--red)">−5%</td>
+                            <td>211,200,000,000 × 5%</td>
+                            <td class="r" style="color:var(--red)">−10,560,000,000원</td>
+                        </tr>
+                        <tr class="tr-total">
+                            <td>② 기획자·LG 연간 수취액</td>
+                            <td>95%</td>
+                            <td>211,200,000,000 × 95%</td>
+                            <td class="r">200,640,000,000원</td>
+                        </tr>
+                        <tr class="tr-sub">
+                            <td style="padding-left:28px">└ 월 평균</td>
+                            <td></td>
+                            <td>연간 ÷ 12개월</td>
+                            <td class="r" style="color:var(--a1)">16,720,000,000원</td>
+                        </tr>
+                        <tr class="tr-sub">
+                            <td style="padding-left:28px">└ 일 평균</td>
+                            <td></td>
+                            <td>연간 ÷ 365일</td>
+                            <td class="r" style="color:var(--a1)">549,700,000원</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <!-- ═══ 6. 선사 직접 수익 ═══ -->
@@ -1226,40 +1268,42 @@
         <!-- 선사 연간 총 절감 -->
         <div class="card" style="margin-top:20px">
             <div style="font-size:14px;font-weight:700;margin-bottom:18px">연간 총 선사 벙커 절감 추정 (300척 기준)</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>선종</th>
-                        <th>연간 포트콜</th>
-                        <th>항차당 절감</th>
-                        <th class="r">연간 절감액</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>🔵 20,000 TEU급</td>
-                        <td>100콜</td>
-                        <td>5.25억원/콜</td>
-                        <td class="r" style="color:var(--a1)">525억원</td>
-                    </tr>
-                    <tr>
-                        <td>🟡 12,000 TEU급</td>
-                        <td>130콜</td>
-                        <td>3.24억원/콜</td>
-                        <td class="r" style="color:var(--gold)">421억원</td>
-                    </tr>
-                    <tr>
-                        <td>🟢 7,000 TEU급</td>
-                        <td>70콜</td>
-                        <td>1.87억원/콜</td>
-                        <td class="r" style="color:var(--green)">131억원</td>
-                    </tr>
-                    <tr class="tr-total">
-                        <td colspan="3">선사 연간 총 벙커 절감액 (300콜 합산)</td>
-                        <td class="r">1,077억원</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>선종</th>
+                            <th>연간 포트콜</th>
+                            <th>항차당 절감</th>
+                            <th class="r">연간 절감액</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🔵 20,000 TEU급</td>
+                            <td>100콜</td>
+                            <td>5.25억원/콜</td>
+                            <td class="r" style="color:var(--a1)">525억원</td>
+                        </tr>
+                        <tr>
+                            <td>🟡 12,000 TEU급</td>
+                            <td>130콜</td>
+                            <td>3.24억원/콜</td>
+                            <td class="r" style="color:var(--gold)">421억원</td>
+                        </tr>
+                        <tr>
+                            <td>🟢 7,000 TEU급</td>
+                            <td>70콜</td>
+                            <td>1.87억원/콜</td>
+                            <td class="r" style="color:var(--green)">131억원</td>
+                        </tr>
+                        <tr class="tr-total">
+                            <td colspan="3">선사 연간 총 벙커 절감액 (300콜 합산)</td>
+                            <td class="r">1,077억원</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <div class="co ok" style="margin-top:16px">
                 <div class="cicon">🚀</div>
                 <div class="ctxt">
@@ -1341,54 +1385,56 @@
             <div class="sn">9</div>단계별 보급률 수익 시나리오<div class="sl"></div>
         </div>
         <div class="card">
-            <table>
-                <thead>
-                    <tr>
-                        <th>단계</th>
-                        <th>보급률</th>
-                        <th>대상 물량</th>
-                        <th>총 검수료</th>
-                        <th class="r">LG 수취 (95%)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>🌱 Phase 1 — 초기</td>
-                        <td>10%</td>
-                        <td>264만개</td>
-                        <td>211억원</td>
-                        <td class="r" style="color:var(--a1)">200억원</td>
-                    </tr>
-                    <tr>
-                        <td>🚀 Phase 2 — 성장</td>
-                        <td>30%</td>
-                        <td>792만개</td>
-                        <td>634억원</td>
-                        <td class="r" style="color:var(--a1)">602억원</td>
-                    </tr>
-                    <tr>
-                        <td>📈 Phase 3 — 확장</td>
-                        <td>50%</td>
-                        <td>1,320만개</td>
-                        <td>1,056억원</td>
-                        <td class="r" style="color:var(--gold)">1,003억원</td>
-                    </tr>
-                    <tr>
-                        <td>🌏 Phase 4 — 주요</td>
-                        <td>80%</td>
-                        <td>2,112만개</td>
-                        <td>1,690억원</td>
-                        <td class="r" style="color:var(--green)">1,605억원</td>
-                    </tr>
-                    <tr class="tr-total">
-                        <td>✅ 전국 완전 보급</td>
-                        <td>100%</td>
-                        <td>2,640만개</td>
-                        <td>2,112억원</td>
-                        <td class="r">2,006억원</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>단계</th>
+                            <th>보급률</th>
+                            <th>대상 물량</th>
+                            <th>총 검수료</th>
+                            <th class="r">기획자·LG 수취 (95%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🌱 Phase 1 — 초기</td>
+                            <td>10%</td>
+                            <td>264만개</td>
+                            <td>211억원</td>
+                            <td class="r" style="color:var(--a1)">200억원</td>
+                        </tr>
+                        <tr>
+                            <td>🚀 Phase 2 — 성장</td>
+                            <td>30%</td>
+                            <td>792만개</td>
+                            <td>634억원</td>
+                            <td class="r" style="color:var(--a1)">602억원</td>
+                        </tr>
+                        <tr>
+                            <td>📈 Phase 3 — 확장</td>
+                            <td>50%</td>
+                            <td>1,320만개</td>
+                            <td>1,056억원</td>
+                            <td class="r" style="color:var(--gold)">1,003억원</td>
+                        </tr>
+                        <tr>
+                            <td>🌏 Phase 4 — 주요</td>
+                            <td>80%</td>
+                            <td>2,112만개</td>
+                            <td>1,690억원</td>
+                            <td class="r" style="color:var(--green)">1,605억원</td>
+                        </tr>
+                        <tr class="tr-total">
+                            <td>✅ 전국 완전 보급</td>
+                            <td>100%</td>
+                            <td>2,640만개</td>
+                            <td>2,112억원</td>
+                            <td class="r">2,006억원</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <div style="margin-top:20px">
                 <div class="ch-wrap" style="height:240px"><canvas id="scenarioChart"></canvas></div>
             </div>
