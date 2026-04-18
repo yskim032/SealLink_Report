@@ -837,6 +837,11 @@
             <div class="hmeta-item"><label>분석 대상</label><span>대한민국 전체 컨테이너 터미널</span></div>
             <div class="hmeta-item"><label>적용 기준</label><span>Full Container 80% 적용</span></div>
             <div class="hmeta-item"><label>등급</label><span>🔒 기밀 (LG 내부 검토용)</span></div>
+            <div class="hmeta-item"
+                style="border-left:1px solid rgba(0,198,255,0.25);padding-left:28px;margin-left:8px">
+                <label>아이디어 제안 및 기획</label>
+                <span style="font-size:16px;font-weight:700;color:#00e5a0;letter-spacing:0.5px">김영삼</span>
+            </div>
         </div>
     </header>
 
@@ -1444,47 +1449,7 @@
         });
     </script>
 
-    <!-- ═══ FIREBASE VISITOR TRACKING ═══ -->
-    <!-- 방문자 통계 플로팅 위젯 -->
-    <div id="visitor-widget" style="
-  position:fixed; bottom:24px; right:24px; z-index:9999;
-  background:rgba(13,24,45,0.92); backdrop-filter:blur(16px);
-  border:1px solid rgba(0,198,255,0.3); border-radius:14px;
-  padding:14px 18px; min-width:200px;
-  box-shadow:0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,198,255,0.05);
-  transition:opacity .3s;
-">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
-            <span
-                style="width:7px;height:7px;background:#00e5a0;border-radius:50%;box-shadow:0 0 6px #00e5a0;animation:blink 1.4s infinite"></span>
-            <span style="font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:#6a7d96;font-weight:700">접속
-                현황</span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:8px">
-            <div style="display:flex;justify-content:space-between;align-items:center">
-                <span style="font-size:11px;color:#6a7d96">내 IP</span>
-                <span id="vw-ip"
-                    style="font-size:12px;font-weight:600;color:#00c6ff;font-family:'Inter',sans-serif">조회중...</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center">
-                <span style="font-size:11px;color:#6a7d96">오늘 접속</span>
-                <span id="vw-today"
-                    style="font-size:12px;font-weight:700;color:#f5a623;font-family:'Inter',sans-serif">—</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center">
-                <span style="font-size:11px;color:#6a7d96">누적 접속</span>
-                <span id="vw-total"
-                    style="font-size:12px;font-weight:700;color:#00e5a0;font-family:'Inter',sans-serif">—</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center">
-                <span style="font-size:11px;color:#6a7d96">접속 시각</span>
-                <span id="vw-time" style="font-size:11px;color:#e2eaf5;font-family:'Inter',sans-serif">—</span>
-            </div>
-        </div>
-        <div id="vw-status" style="margin-top:10px;font-size:10px;color:#6a7d96;text-align:center">Firebase 연결 중...
-        </div>
-    </div>
-
+    <!-- Firebase 방문자 추적 (백그라운드 전용 — 위젯 비표시) -->
     <script>
         (async function () {
             // ── Firebase Realtime Database 설정 ────────────────────────────
