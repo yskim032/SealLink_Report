@@ -926,6 +926,42 @@
                 padding: 14px;
                 gap: 8px;
             }
+
+            /* 법적 고지문 모바일 대응 */
+            .legal-notice {
+                padding: 24px 20px !important;
+                text-align: center;
+            }
+
+            .legal-notice>div>div {
+                flex-direction: column;
+                align-items: center !important;
+                gap: 15px !important;
+            }
+
+            .legal-notice p {
+                text-align: justify;
+                font-size: 12px !important;
+            }
+
+            .legal-notice .grid-wrap {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* 수익 흐름도 화살표 텍스트 수평 유지 */
+            .farr {
+                transform: none !important;
+                margin: 10px auto !important;
+            }
+
+            .farr svg {
+                transform: rotate(90deg);
+            }
+
+            .alabel {
+                margin-top: 5px;
+                transform: none !important;
+            }
         }
     </style>
 </head>
@@ -933,7 +969,7 @@
 <body>
 
     <!-- ═══ 법적 기밀 고지문 ═══ -->
-    <div
+    <div class="legal-notice"
         style="width:100%;background:#060d1a;border-bottom:2px solid rgba(245,166,35,0.35);padding:28px 48px;position:relative">
         <div style="max-width:1200px;margin:0 auto">
             <div style="display:flex;align-items:flex-start;gap:20px">
@@ -955,7 +991,7 @@
                         <strong style="color:#ff9070">수신자의 명시적 서면 동의 없이 제3자에게 공개·배포·복제·전달하는 행위는 대한민국 영업비밀 보호법,
                             부정경쟁방지법 및 당사자 간 체결 예정 계약에 의거하여 민·형사상 책임의 대상이 될 수 있습니다.</strong>
                     </p>
-                    <div
+                    <div class="grid-wrap"
                         style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px;margin-bottom:14px">
                         <div
                             style="background:rgba(245,166,35,0.05);border:1px solid rgba(245,166,35,0.18);border-radius:8px;padding:13px 16px">
